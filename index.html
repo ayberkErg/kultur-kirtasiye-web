@@ -638,6 +638,7 @@
             <p>Özel tasarım kaşe plaket örneği. Kaliteli malzeme ve uzun ömürlü kullanım.</p>
           </div>
         </div>
+        
         <!-- 3. Ürün -->
         <div class="product-card"
              data-name="Ofis Kırtasiye"
@@ -683,7 +684,8 @@
           <label for="service">Hizmet Seçiniz:</label>
           <select id="service" name="service" required>
             <option value="">--Bir hizmet seçin--</option>
-            <option value="kase-plaket">Kaşe Plaket</option>
+            <option value="kase">Kaşe</option>
+            <option value="plaket">Plaket</option>
             <option value="masa-isimligi">Masa İsimliği</option>
             <option value="lazer-kazima">Lazer Kazıma</option>
             <option value="ozel-tasarim">Özel Tasarım</option>
@@ -693,33 +695,54 @@
         <!-- Seçilen hizmete göre tasarım fotoğrafları -->
         <div id="service-images">
           <!-- Kaşe Plaket -->
-          <div class="service-option" data-service="kaşe">
+          <div class="service-option" data-service="kase">
             <p>Kaşe Plaket için bir tasarım seçin:</p>
             <label>
               <input type="radio" name="design" value="kase1" />
-              <img src="images/kase1.jpg" alt="Kaşe Tasarım 1">
+              <img src="images/kase1.jpg" alt="Kaşe Plaket Tasarım 1">
             </label>
             <label>
               <input type="radio" name="design" value="kase2" />
-              <img src="images/kase2.jpg" alt="Kaşe Tasarım 2">
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
             </label>
             <label>
               <input type="radio" name="design" value="kase2" />
-              <img src="images/kase2.jpg" alt="Kaşe Tasarım 2">
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
             </label>
             <label>
               <input type="radio" name="design" value="kase2" />
-              <img src="images/kase2.jpg" alt="Kaşe Tasarım 2">
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
             </label>
             <label>
               <input type="radio" name="design" value="kase2" />
-              <img src="images/kase2.jpg" alt="Kaşe Tasarım 2">
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
             </label>
             <label>
               <input type="radio" name="design" value="kase2" />
-              <img src="images/kase2.jpg" alt="Kaşe Tasarım 2">
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
+            </label>
+            <label>
+              <input type="radio" name="design" value="kase2" />
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
             </label>
           </div>
+
+
+
+      <!-- plaket  -->
+      <div class="service-option" data-service="plaket">
+        <p>Plaket için bir tasarım seçin:</p>
+        <label>
+          <input type="radio" name="design" value="masa1" />
+          <img src="images/plaket.jpg" alt="Masa İsimliği Tasarım 1">
+        </label>
+        <label>
+          <input type="radio" name="design" value="masa2" />
+          <img src="images/plaket-cam.jpg" alt="Masa İsimliği Tasarım 2">
+        </label>
+      </div>
+
+
 
           <!-- Masa İsimliği -->
           <div class="service-option" data-service="masa-isimligi">
@@ -734,19 +757,6 @@
             </label>
           </div>
 
-                <div class="service-option" data-service="plaket">
-            <p>plaket tasarım seçin:</p>
-            <label>
-              <input type="radio" name="design" value="masa1" />
-              <img src="images/masa1.jpg" alt="plaket Tasarım 1">
-            </label>
-            <label>
-              <input type="radio" name="design" value="masa2" />
-              <img src="images/masa2.jpg" alt="plaket Tasarım 2">
-            </label>
-          </div>
-
-          
           <!-- Lazer Kazıma -->
           <div class="service-option" data-service="lazer-kazima">
             <p>Lazer Kazıma için bir tasarım seçin:</p>
