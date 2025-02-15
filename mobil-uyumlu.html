@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kültür Kırtasiye | Kaşe ve Özel Tasarımlar</title>
+  
+  <!-- SEO ve Sosyal Medya Meta Etiketleri -->
+  <meta name="description" content="Kültür Kırtasiye: Kaşe, Plaket, Masa İsimliği, Lazer Kazıma ve özel tasarım ürünlerde profesyonel hizmet sunan bir kırtasiye firması." />
+  <meta name="keywords" content="Kaşe, Plaket, Masa İsimliği, Lazer Kazıma, Özel Tasarım, Kırtasiye, Kültür Kırtasiye" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Kültür Kırtasiye - Kaşe, Plaket ve Özel Tasarımlar" />
+  <meta property="og:description" content="Kültür Kırtasiye: Profesyonel hizmet, kaliteli malzeme ve modern tasarımlar." />
+  <meta property="og:image" content="images/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ornekdomain.com/" />
+  <link rel="canonical" href="https://www.ornekdomain.com/" />
+
+  <!-- STYLES -->
+  <style>
+    /* Sıfırlama */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;    /* Yatay kaymayı önlemek için */
+      scroll-behavior: smooth; /* Sayfa içi yumuşak kaydırma */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    
+    /* BACK TO TOP BUTONU */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 999;
+    }
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    #back-to-top:hover {
+      background-color: #555;
+    }
+
+    /* ==========
+       NAVBAR
+       ========== */
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 999;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+    .navbar-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    .navbar-menu {
+      display: flex;
+      gap: 1rem;
+    }
+    .navbar-menu a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar-menu a:hover {
+      color: #ffdd00;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+    @media(max-width: 768px) {
+      .navbar-menu {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        flex-direction: column;
+        background-color: #333;
+        width: 200px;
+        height: calc(100% - 60px);
+        padding: 2rem;
+        transition: right 0.3s ease;
+        overflow-y: auto; /* Menü yüksek olduğunda dikey kaydırma */
+      }
+      .navbar-menu.show {
+        right: 0;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ==========
+       HERO
+       ========== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background: url("images/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-hero {
+      display: inline-block;
+      background-color: #ffdd00;
+      color: #333;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-hero:hover {
+      background-color: #e6c900;
+    }
+
+    /* ==========
+       ANA İÇERİK
+       ========== */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /* ==========
+       ÜRÜNLER
+       ========== */
+    #products {
+      margin-bottom: 3rem;
+    }
+    #products h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #444;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-content {
+      padding: 1rem;
+    }
+    .product-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .product-content p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    /* ==========
+       KİŞİYE ÖZEL SİPARİŞ AL
+       ========== */
+    #custom-order {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 3rem auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+    #custom-order::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, #ffdd00, #ffac00);
+    }
+    #custom-order h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #444;
+      position: relative;
+      font-size: 1.8rem;
+    }
+    #custom-order form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #custom-order .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    #custom-order label {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    #custom-order select,
+    #custom-order textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 100%;
+      transition: border-color 0.3s;
+    }
+    #custom-order select:focus,
+    #custom-order textarea:focus {
+      border-color: #ffac00;
+      outline: none;
+    }
+    #custom-order button {
+      background: linear-gradient(to right, #333, #555);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      align-self: center;
+      width: 200px;
+    }
+    #custom-order button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    /* Hizmete Göre Fotoğraf Seçenekleri */
+    #service-images {
+      margin-bottom: 1rem;
+    }
+    .service-option {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    .service-option.active {
+      display: block;
+    }
+    .service-option p {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    .service-option label {
+      display: inline-block;
+      margin-right: 1rem;
+      cursor: pointer;
+      vertical-align: top;
+    }
+    .service-option img {
+      width: 120px;
+      height: auto;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+      margin-top: 0.5rem;
+    }
+    .service-option input[type="radio"] {
+      display: none;
+    }
+    .service-option input[type="radio"]:checked + img {
+      border-color: #ffac00;
+    }
+
+    /* ==========
+       HAKKIMIZDA
+       ========== */
+    #about {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    #about h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ==========
+       İLETİŞİM
+       ========== */
+    #contact {
+      margin-bottom: 3rem;
+    }
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #444;
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .contact-info, .contact-form {
+      flex: 1 1 300px;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+    .contact-info h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+    .contact-form h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #444;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    /* Placeholder iyileştirmesi */
+    #name::placeholder,
+    #email::placeholder,
+    #message::placeholder {
+      color: #aaa;
+    }
+    .contact-form button {
+      background-color: #333;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #555;
+    }
+
+    /* ==========
+       FOOTER
+       ========== */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .social-links a {
+      color: #fff;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #ffdd00;
+    }
+
+    /* ==========
+       ANİMASYONLU GÖRÜNÜM (Intersection Observer)
+       ========== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========
+       MODAL STİLLERİ (ARIA Eklemeleri)
+       ========== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto; /* Mobilde modal uzun olursa dikey kaydırma */
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+      max-height: 90vh;  /* Mobilde ekran taşmasını önlemek için */
+      overflow-y: auto;  /* İçerik çok uzunsa kaydırma */
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ==========
+       RESPONSIVE (Mobil Uyumluluk)
+       ========== */
+    @media (max-width: 768px) {
+      .hero {
+        height: 60vh;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .navbar-menu a {
+        font-size: 1rem;
+      }
+      /* Ürün grid: iki sütun */
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      /* Custom Order alanı */
+      #custom-order {
+        padding: 1.5rem;
+        margin: 2rem auto;
+      }
+      .service-option img {
+        width: 100px;
+      }
+      /* İletişim alanı: kutuların genişliği */
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content p {
+        font-size: 0.9rem;
+      }
+      .navbar-menu a {
+        font-size: 0.9rem;
+      }
+      #custom-order h2 {
+        font-size: 1.6rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- BACK TO TOP BUTONU -->
+  <button id="back-to-top" aria-label="Başa dön">↑</button>
+
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <div class="navbar">
+      <div class="navbar-logo">Kültür Kırtasiye</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navbar-menu" id="navbar-menu">
+        <a href="#hero">Anasayfa</a>
+        <a href="#products">Ürünler</a>
+        <a href="#custom-order">Sipariş Ver</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#contact">İletişim</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BÖLÜMÜ -->
+  <section class="hero" id="hero" aria-label="Kültür Kırtasiye Anasayfa">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>Kaşe Plaket ve Özel Tasarımlar</h1>
+      <p>Lazer kazıma teknolojisiyle üretilen kişiye özel ürünlerimizi keşfedin.</p>
+      <a href="#products" class="btn-hero">Ürünlerimize Göz Atın</a>
+    </div>
+  </section>
+
+  <!-- ANA İÇERİK -->
+  <main>
+    <!-- ÜRÜNLER (Modal ile) -->
+    <section id="products" class="fade-up" aria-labelledby="products-title">
+      <h2 id="products-title">Ürünlerimiz</h2>
+      <div class="product-grid">
+        <!-- 1. Ürün -->
+        <div class="product-card"
+             data-name="Kaşe"
+             data-description="Özel tasarım kaşe plaket örneği. Kaliteli malzeme ve uzun ömürlü kullanım."
+             data-image="images/kase.jpeg">
+          <img src="images/kase.jpeg" alt="Kaşe örneği" class="product-img" />
+          <div class="product-content">
+            <h3>Kaşe</h3>
+            <p>Özel tasarım kaşe plaket örneği. Kaliteli malzeme ve uzun ömürlü kullanım.</p>
+          </div>
+        </div>
+        <!-- 2. Ürün -->
+        <div class="product-card"
+             data-name="Plaket"
+             data-description="Özel tasarım kaşe plaket örneği. Kaliteli malzeme ve uzun ömürlü kullanım."
+             data-image="images/plaket.jpg">
+          <img src="images/plaket.jpg" alt="Plaket örneği" class="product-img" />
+          <div class="product-content">
+            <h3>Plaket</h3>
+            <p>Özel tasarım kaşe plaket örneği. Kaliteli malzeme ve uzun ömürlü kullanım.</p>
+          </div>
+        </div>
+        <!-- 3. Ürün -->
+        <div class="product-card"
+             data-name="Ofis Kırtasiye"
+             data-description="Ofis malzemeleri ve kırtasiye ürünleri için özel tasarım çözümler."
+             data-image="images/ofis_kirtasiye.jpg">
+          <img src="images/ofis_kirtasiye.jpg" alt="Ofis Kırtasiye ürünleri" class="product-img" />
+          <div class="product-content">
+            <h3>Ofis Kırtasiye</h3>
+            <p>Ofis malzemeleri ve kırtasiye ürünleri için özel tasarım çözümler.</p>
+          </div>
+        </div>
+        <!-- 4. Ürün -->
+        <div class="product-card"
+             data-name="Masa İsimliği"
+             data-description="Ofis ve kurumsal ortamlara şıklık katan kişiye özel masa isimlikleri."
+             data-image="images/masa-isimligi.jpg">
+          <img src="images/masa-isimligi.jpg" alt="Masa isimliği örneği" class="product-img" />
+          <div class="product-content">
+            <h3>Masa İsimliği</h3>
+            <p>Ofis ve kurumsal ortamlara şıklık katan kişiye özel masa isimlikleri.</p>
+          </div>
+        </div>
+        <!-- 5. Ürün -->
+        <div class="product-card"
+             data-name="Lazer Kazıma"
+             data-description="Lazer kazıma teknolojisiyle kusursuz işçilik. İstediğiniz tasarımı ürüne işliyoruz."
+             data-image="images/lazer-kazima.jpg">
+          <img src="images/lazer-kazima.jpg" alt="Lazer kazıma örneği" class="product-img" />
+          <div class="product-content">
+            <h3>Lazer Kazıma</h3>
+            <p>Lazer kazıma teknolojisiyle kusursuz işçilik. İstediğiniz tasarımı ürüne işliyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KİŞİYE ÖZEL SİPARİŞ AL -->
+    <section id="custom-order" class="fade-up" aria-label="Kişiye Özel Sipariş">
+      <h2>Kaşe ve Kişiye Özel Sipariş</h2>
+      <form id="customOrderForm">
+        <!-- Hizmet Seçimi -->
+        <div class="form-group">
+          <label for="service">Hizmet Seçiniz:</label>
+          <select id="service" name="service" required>
+            <option value="">--Bir hizmet seçin--</option>
+            <option value="kase-plaket">Kaşe Plaket</option>
+            <option value="masa-isimligi">Masa İsimliği</option>
+            <option value="lazer-kazima">Lazer Kazıma</option>
+            <option value="ozel-tasarim">Özel Tasarım</option>
+          </select>
+        </div>
+
+        <!-- Seçilen hizmete göre tasarım fotoğrafları -->
+        <div id="service-images">
+          <!-- Kaşe Plaket -->
+          <div class="service-option" data-service="kase-plaket">
+            <p>Kaşe Plaket için bir tasarım seçin:</p>
+            <label>
+              <input type="radio" name="design" value="kase1" />
+              <img src="images/kase1.jpg" alt="Kaşe Plaket Tasarım 1">
+            </label>
+            <label>
+              <input type="radio" name="design" value="kase2" />
+              <img src="images/kase2.jpg" alt="Kaşe Plaket Tasarım 2">
+            </label>
+          </div>
+
+          <!-- Masa İsimliği -->
+          <div class="service-option" data-service="masa-isimligi">
+            <p>Masa İsimliği için bir tasarım seçin:</p>
+            <label>
+              <input type="radio" name="design" value="masa1" />
+              <img src="images/masa1.jpg" alt="Masa İsimliği Tasarım 1">
+            </label>
+            <label>
+              <input type="radio" name="design" value="masa2" />
+              <img src="images/masa2.jpg" alt="Masa İsimliği Tasarım 2">
+            </label>
+          </div>
+
+          <!-- Lazer Kazıma -->
+          <div class="service-option" data-service="lazer-kazima">
+            <p>Lazer Kazıma için bir tasarım seçin:</p>
+            <label>
+              <input type="radio" name="design" value="lazer1" />
+              <img src="images/lazer1.jpg" alt="Lazer Kazıma Tasarım 1">
+            </label>
+            <label>
+              <input type="radio" name="design" value="lazer2" />
+              <img src="images/lazer2.jpg" alt="Lazer Kazıma Tasarım 2">
+            </label>
+          </div>
+
+          <!-- Özel Tasarım -->
+          <div class="service-option" data-service="ozel-tasarim">
+            <p>Özel Tasarım için örnek tasarımlar:</p>
+            <label>
+              <input type="radio" name="design" value="ozel1" />
+              <img src="images/ozel1.jpg" alt="Özel Tasarım 1">
+            </label>
+            <label>
+              <input type="radio" name="design" value="ozel2" />
+              <img src="images/ozel2.jpg" alt="Özel Tasarım 2">
+            </label>
+          </div>
+        </div>
+
+        <!-- Yazı Detayları -->
+        <div class="form-group">
+          <label for="orderDetails">Ne Yazdırmak İstediğinizi Açıklayın:</label>
+          <textarea id="orderDetails" name="orderDetails" rows="5" placeholder="Örneğin: İsim, tarih, kurum adı..." required></textarea>
+        </div>
+
+        <!-- Form Gönderme Butonu -->
+        <button type="submit">Sipariş Gönder</button>
+      </form>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="about" class="fade-up" aria-labelledby="about-title">
+      <h2 id="about-title">Hakkımızda</h2>
+      <p>
+        Kültür Kırtasiye olarak; kaşe plaket, masa isimliği ve lazer kazıma alanında
+        yılların deneyimiyle hizmet veriyoruz. Kaliteli ve estetik ürünler sunmayı hedeflerken,
+        teknolojik altyapımız sayesinde müşterilerimize kişiye özel tasarım seçenekleri sunuyoruz.
+        Kurumsal müşterilerimize, okullara ve bireysel taleplere yönelik geniş bir ürün yelpazesi ile
+        her zaman yenilikçi çözümler üretiyoruz.
+      </p>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="contact" class="fade-up" aria-labelledby="contact-title">
+      <h2 id="contact-title">İletişim</h2>
+      <div class="contact-container">
+        <!-- İletişim Bilgileri -->
+        <div class="contact-info">
+          <h3>Bize Ulaşın</h3>
+          <p><strong>Adres:</strong> Örnek Mah. Kırtasiye Sk. No: 12, İstanbul</p>
+          <p><strong>Telefon:</strong> +90 555 555 55 55</p>
+          <p><strong>E-posta:</strong> <a href="mailto:info@kulturkirtasiye.com">info@kulturkirtasiye.com</a></p>
+          <p>Her türlü soru, görüş ve önerileriniz için bizimle iletişime geçebilirsiniz.</p>
+          <!-- Harita iframe (mobil uyumlu olacak şekilde) -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6248.797598292585!2d27.1163199!3d38.4553535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd9c830d58dc3%3A0xfad5ef8c95c38427!2zS8O8bHTDvHIgS8SxcnRhc2l5ZQ!5e0!3m2!1str!2str!4v1739648822898!5m2!1str!2str"
+            style="border:0; width:100%; height:400px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Kültür Kırtasiye Harita Konumu">
+          </iframe>
+        </div>
+        <!-- İletişim Formu -->
+        <div class="contact-form">
+          <h3>İletişim Formu</h3>
+          <form id="contactForm">
+            <label for="name">Adınız Soyadınız:</label>
+            <input type="text" id="name" name="name" placeholder="Örnek: Ali Veli" required />
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="email" placeholder="Örnek: ali@example.com" required />
+            <label for="message">Mesajınız:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+            <button type="submit">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Kültür Kırtasiye - Tüm Hakları Saklıdır.</p>
+    <div class="social-links">
+      <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- MODAL (ÜRÜN DETAY) -->
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <div class="modal-content">
+      <span class="modal-close" id="close-modal" aria-label="Kapat">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="Ürün Detay Resmi" style="width:100%; border-radius:6px; margin-bottom:1rem;"/>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Back to Top Butonu
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hamburger Menu
+    const hamburger = document.getElementById("hamburger");
+    const navbarMenu = document.getElementById("navbar-menu");
+    hamburger.addEventListener("click", () => {
+      navbarMenu.classList.toggle("show");
+    });
+    const menuLinks = navbarMenu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navbarMenu.classList.remove("show");
+      });
+    });
+
+    // Fade-Up Animation (Intersection Observer)
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // İletişim Formu İşlemleri
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert("Lütfen tüm alanları doldurunuz.");
+      } else {
+        alert("Mesajınız alınmıştır, teşekkür ederiz!");
+        contactForm.reset();
+      }
+    });
+
+    // Kişiye Özel Sipariş Formu İşlemleri
+    const customOrderForm = document.getElementById('customOrderForm');
+    const serviceSelect = document.getElementById('service');
+    const serviceOptions = document.querySelectorAll('.service-option');
+
+    serviceSelect.addEventListener('change', function() {
+      serviceOptions.forEach(opt => {
+        opt.classList.remove('active');
+        const radios = opt.querySelectorAll('input[type="radio"]');
+        radios.forEach(r => (r.checked = false));
+      });
+      const selectedValue = this.value;
+      if (selectedValue) {
+        const matchingOption = document.querySelector(`.service-option[data-service="${selectedValue}"]`);
+        if (matchingOption) {
+          matchingOption.classList.add('active');
+        }
+      }
+    });
+
+    customOrderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const service = serviceSelect.value;
+      const orderDetails = document.getElementById('orderDetails').value.trim();
+      let selectedDesign = "";
+      const activeOption = document.querySelector(`.service-option[data-service="${service}"]`);
+      if (activeOption) {
+        const checkedRadio = activeOption.querySelector('input[type="radio"]:checked');
+        if (checkedRadio) {
+          selectedDesign = checkedRadio.value;
+        }
+      }
+      if (!service || !selectedDesign || !orderDetails) {
+        alert("Lütfen hizmet, tasarım ve sipariş detaylarını eksiksiz giriniz.");
+      } else {
+        alert(`
+Siparişiniz alınmıştır!
+
+Hizmet: ${service}
+Tasarım: ${selectedDesign}
+Detaylar: ${orderDetails}
+        `);
+        customOrderForm.reset();
+        serviceOptions.forEach(opt => opt.classList.remove('active'));
+      }
+    });
+
+    // Modal İşlemleri (Ürün Detay)
+    const modal = document.getElementById("product-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalImage = document.getElementById("modal-image");
+    const modalDesc = document.getElementById("modal-description");
+    const closeModal = document.getElementById("close-modal");
+    document.querySelectorAll(".product-card").forEach(card => {
+      card.addEventListener("click", function() {
+        modalTitle.textContent = this.dataset.name;
+        modalImage.src = this.dataset.image;
+        modalDesc.textContent = this.dataset.description;
+        modal.style.display = "flex";
+      });
+    });
+    closeModal.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+    window.addEventListener("click", function(e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
